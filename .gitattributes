@@ -1,0 +1,5 @@
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+data_preparation/**/*.csv filter=lfs diff=lfs merge=lfs -text
+data_preparation/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+data_preparation/**/*.mkv filter=lfs diff=lfs merge=lfs -text

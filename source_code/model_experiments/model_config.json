@@ -1,0 +1,61 @@
+{
+  "windows": {
+    "window_size": 20,
+    "stride": 3,
+    "history_frames": 5,
+    "boundary_policy": "segment_only",
+    "majority_purity_threshold": 0.5,
+    "drop_state_3_windows": true,
+    "forbid_label3_in_off_window": true
+  },
+  "features": {
+    "enabled": true,
+    "distance_joints": ["head", "left_hand", "right_hand"],
+    "use_distance_to_device1": true,
+    "use_distance_to_device2": true,
+    "use_distance_diff": true,
+    "use_horizontal_head_direction": false,
+    "use_velocity": true,
+    "vertical_axis": 1
+  },
+  "split": {
+    "strategy": "window",
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15,
+    "random_seed": 42,
+    "fixed_test_windows": "fixed_test_windows.json"
+  },
+  "model": {
+    "architecture": "gcn_attention_bilstm",
+    "gcn_hidden_dims": [64, 128, 256],
+    "attention_hidden_dim": 128,
+    "temporal_kernel_sizes": [3, 5],
+    "lstm_hidden_dim": 128,
+    "lstm_layers": 1,
+    "bidirectional": true,
+    "classifier_hidden_dim": 128,
+    "dropout": 0.35,
+    "joint_attention_dropout": 0.1,
+    "joint_attention_temperature": 1.0,
+    "temporal_pool": "mean"
+  },
+  "train": {
+    "batch_size": 32,
+    "epochs": 80,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "patience": 10,
+    "gradient_clip": 1.0,
+    "class_weighted_loss": true,
+    "device": "auto"
+  },
+  "realtime": {
+    "feature_ema_alpha": 0.2,
+    "probability_window": 5,
+    "confidence_threshold": 0.6,
+    "hold_windows": 2,
+    "side_view_threshold": null,
+    "side_view_gain": 0.25
+  }
+}

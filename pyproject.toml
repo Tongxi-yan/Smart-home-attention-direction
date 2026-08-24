@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fyp-attention-direction"
+version = "1.0.0"
+description = "Attention direction detection for smart-home interaction using Azure Kinect skeletons."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Jingyan Zhai" }]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+models = [
+  "torch>=2.1",
+  "scikit-learn>=1.3",
+  "xgboost>=2.0",
+  "matplotlib>=3.8",
+]
+azure = [
+  "opencv-python>=4.8",
+  "pykinect-azure>=0.0.4",
+  "pyk4a>=1.5",
+  "ultralytics>=8.2",
+]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+fyp = "source_code.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["source_code*", "data_preparation", "device_detection", "real_time"]
+
+[tool.setuptools.package-data]
+real_time = ["*.pth", "*.json", "README.md"]
+device_detection = ["*.pt", "*.yaml", "training_results/*"]
+"source_code.model_experiments" = ["*.json", "results/*.csv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

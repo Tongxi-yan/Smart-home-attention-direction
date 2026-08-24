@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
+.idea/
+.pytest_cache/
+.ruff_cache/
+.venv/
+outputs/
+runs/
+*.cache
+yolo11*.pt
+yolov8*.pt
+
+# Deliberately excluded: datasets already split for model training.
+data_preparation/model_splits/
+data_preparation/device_detection_dataset/
+
+# The delivery keeps only raw_data and final_data inside data_preparation.
+data_preparation/integrated/
+data_preparation/processed/
+data_preparation/preprocessing_validation/
+data_preparation/off_augmentation/
+data_preparation/intermediate/

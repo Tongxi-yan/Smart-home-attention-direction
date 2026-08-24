@@ -1,0 +1,32 @@
+{
+  "scope": "Original collected data and final processed data only",
+  "excluded": [
+    "intermediate integration files",
+    "intermediate preprocessing validation files",
+    "train/validation/test copies generated for model fitting",
+    "model training caches",
+    "ELAN project files"
+  ],
+  "collections": {
+    "raw_data": {
+      "study_recordings": 25,
+      "recordings": 23,
+      "missing_session_folders": ["Data18", "Data19"],
+      "files": 69,
+      "csv_files": 46,
+      "video_files": 23,
+      "bytes": 2821685945,
+      "csv_rows": 2321358,
+      "description": "Available original Azure Kinect skeleton coordinates, detected 3D device positions, and synchronized RGB video from a 25-recording study"
+    },
+    "final_data": {
+      "recordings": 25,
+      "files": 25,
+      "primary_csv_files": 25,
+      "additional_off_data_files": 0,
+      "bytes": 63125671,
+      "csv_rows": 78389,
+      "description": "Final 16-node model inputs with ELAN-derived frame labels, interpolation, and smoothing"
+    }
+  }
+}

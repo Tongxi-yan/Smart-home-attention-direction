@@ -1,0 +1,15 @@
+# Download/export the detector dataset described in device_detection/README.md.
+path: ../data_preparation/device_detection_dataset
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 2
+names: [lamp, speaker]
+
+roboflow:
+  workspace: new-workspace-wmyi7
+  project: my-first-project-emepe
+  version: 6
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/new-workspace-wmyi7/my-first-project-emepe/dataset/6

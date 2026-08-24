@@ -1,0 +1,37 @@
+{
+  "classifier": {
+    "file": "real_time/best_gcn_attention_bilstm.pth",
+    "source": "../gcn_att_lstm_direction_project/outputs/best_gcn_att_lstm_model.pth",
+    "sha256": "b614ff8eb9a931435b3fae6a77fd06032f1ed093ebea5c8271b9a2288840009c",
+    "size_bytes": 3400881,
+    "checkpoint_epoch": 44,
+    "checkpoint_best_validation_macro_f1": 0.9704079950209893,
+    "model_arch": "gcn_att_lstm",
+    "num_nodes": 16,
+    "channels_per_node": 21,
+    "window_size": 20,
+    "class_names": ["off", "device1", "device2"]
+  },
+  "device_detector": {
+    "file": "device_detection/device_detector_best.pt",
+    "source": "../设备位置 1.23/best.pt",
+    "sha256": "b47b9ad4466a94be36dacf054d3bd33cbeaa0fe8b358d84f17af5e91c72f1d4d",
+    "size_bytes": 23882408,
+    "classes_used": ["lamp", "speaker"]
+  },
+  "fixed_test_windows": {
+    "file": "source_code/model_experiments/fixed_test_windows.json",
+    "source": "../gcn_att_lstm_direction_project/fixed_test_windows.json",
+    "sha256": "082e42261a1ecdac805c73e0b82368809e7ed2ce36ac7437a2b22f5a959aa073",
+    "size_bytes": 107965,
+    "window_key_count": 2164,
+    "random_seed": 42,
+    "test_ratio": 0.15
+  },
+  "thesis_reported_best": {
+    "window_size": 20,
+    "balanced_accuracy": 0.975,
+    "macro_f1": 0.977,
+    "note": "Reported result; not recomputed during code cleanup."
+  }
+}
